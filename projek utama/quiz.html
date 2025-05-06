@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azhazaquiz</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+<header>
+</header>
+
+<nav id="navbar">
+  <a href="index.html">Home</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="about.html">About</a>
+  <a href="service.html">Service</a>
+  <a href="contact.html">Contact</a>
+  <a href="leaderboard.html">Leaderboard</a>
+</nav>
+
+<div class="container" id="intro">
+  <h1>Quizha</h1>
+  <h2>SELF IMPROVEMENT</h2>
+  <p>Masukkan nama dan kelas kamu terlebih dahulu yah!!!</p>
+  <input type="text" id="nameInput" placeholder="Name...."><br>
+  <input type="text" id="classInput" placeholder="Class..."><br>
+
+  <button onclick="startQuiz()">StarQuizha</button>
+</div>
+
+<div class="container hidden" id="quiz">
+  <h2 id="question">Pertanyaan disini</h2>
+  <div class="timer-fixed" id="timer">20 second</div>
+  <div id="options"></div>
+  <p id="scoreDisplay" class="hidden"></p>
+  <p id="finalMessage" class="hidden"></p>
+</div>
+
+<audio id="quizMusic" loop autoplay controls>
+  <source src="audioquis.mpeg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  let quizInProgress = false;
+
+  function startQuiz() {
+    const music = document.getElementById("quizMusic");
+
+    music.play().then(() => {
+      console.log("Musik dimulai.");
+    }).catch((error) => {
+      console.error("Gagal memutar musik:", error);
+    });
+
+    document.getElementById("intro").classList.add("hidden");
+    document.getElementById("quiz").classList.remove("hidden");
+
+    document.querySelector("nav").classList.add("disabled");
+  }
+
+  function finishQuiz() {
+    document.querySelector("nav").classList.remove("disabled");
+
+    document.getElementById("finalMessage").classList.remove("hidden");
+    document.getElementById("scoreDisplay").classList.remove("hidden");
+  }
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

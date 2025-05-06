@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Azhazaquiz - Leaderboard</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Azhazaquiz</h1>
+        </header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Service</a>
+            <a href="contact.html">Contact</a>
+            <a href="leaderboard.html">Leaderboard</a>
+        </nav>
+        <div class="container">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboardList" style="list-style: none; padding: 0; text-align: left;"></ul>
+            <button onclick="clearLeaderboard()">Reset Leaderboard</button>
+        </div>
+        <script>
+            function showLeaderboard() {
+                const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+                const list = document.getElementById("leaderboardList");
+                list.innerHTML = "";
+                if (leaderboard.length === 0) {
+                    list.innerHTML = "<li>Belum ada data.</li>";
+                    return;
+                }
+                leaderboard.forEach((player, index) => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `${index + 1}. ${player.name} (${player.kelas}) - ${player.score}/${player.total}`;
+                    list.appendChild(li);
+                });
+            }
+
+            function clearLeaderboard() {
+                const key = prompt("Masukkan kunci untuk reset leaderboard:");
+                const correctKey = "susi";
+                if (key === correctKey) {
+                    if (confirm("Yakin mau hapus semua data leaderboard?")) {
+                        localStorage.removeItem("leaderboard");
+                        showLeaderboard();
+                    }
+                } else {
+                    alert("Kunci salah! Tidak dapat menghapus leaderboard.");
+                }
+            }
+
+            showLeaderboard();
+        </script>
+    </body>
+</html>

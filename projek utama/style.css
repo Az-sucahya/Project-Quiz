@@ -1,0 +1,54 @@
+
+body { 
+    font-family: buroto;
+    background: url(walpaper.jpeg);
+    padding: 50px;
+    text-align: center;
+}
+header {
+    color: rgb(63, 16, 16);
+    padding: 10px 0;
+    bottom: 10px;
+    margin: 0%;
+    background:;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 6px;
+    margin: 4pxx;
+    transition: .5s;
+}
+nav :hover{
+    color:rgba(0, 0, 0, 0.904);
+}
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+.container {
+    max-width: 600px;
+    margin: 8px auto;
+    background: rgb(199, 162, 147, 0.904);
+    padding: 100px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgb(73, 31, 37);
+    text-align: center;
+}
+.container h1{
+    margin: 100px;
+}
+.container h2{
+    color:#ffffff;
+}
+.container p{
+    color: #ffffff;
+    margin-bottom: 0px;
+    padding: 0%;
+    border-radius: 0%;
+}
