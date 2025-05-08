@@ -1,0 +1,134 @@
+body {
+  font-family: 'buroto', sans-serif;
+  background: url(ehh.jpeg) no-repeat center center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  color: rgb(255, 255, 255);
+  padding: 10px 0;
+  text-align: center;
+}
+
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 6px;
+  margin: 4px;
+  background-color: rgba(255, 255, 255, 0);
+  transition: 0.10s;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 4px 10px;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background-color: rgb(199, 162, 147, 0.904);
+  color: rgb(46, 29, 29);
+  text-decoration: underline;
+  transition: 1. 5s;
+}
+
+
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  background:rgb(199, 162, 147 ) ;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgb(128, 127, 148);
+}
+
+.container h1 {
+  margin-bottom: 10px;
+  color: rgb(53, 96, 145);
+}
+
+.container h2 {
+  margin: 5px;
+  color: #ffffff;
+}
+
+.container p {
+  color: #ffffff;
+}
+
+
+input[type="text"] {
+  padding: 10px;
+  width: 80%;
+  margin: 10px 0;
+  border-radius: 6px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(237, 248, 248);
+}
+
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: rgb(255, 255, 255);
+  color: rgb(19, 2, 2);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  color: #ffffff;
+  background-color: #222f69;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.option {
+  display: block;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: rgb(217, 223, 250);
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100%;
+  color: rgb(63, 46, 46);
+  font-family: system-ui, sans-serif;
+}
+timer"fixed"{
+  color: wheat;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  input[type="text"] {
+    width: 95%;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    margin: 5px 0;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Azhazaquiz</title>
+  <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+<header></header>
+
+<nav id="navbar">
+  <a href="index.html">Home</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="about.html">About</a>
+  <a href="service.html">Service</a>
+  <a href="contact.html">Contact</a>
+  <a href="leaderboard.html">Leaderboard</a>
+</nav>
+
+<div class="container" id="intro">
+  <h1>Quizha</h1>
+  <h2>SELF IMPROVEMENT</h2>
+  <p>Masukkan nama dan pilih kelas kamu terlebih dahulu yah!!!</p>
+  <input type="text" id="nameInput" placeholder="Nama...."><br>
+
+  <select id="classInput">
+    <option value="" disabled selected><b>Pilih Kelas</b></option>
+    <option value="X MIA I">Kelas X MIA I</option>
+    <option value="X MIA II">Kelas X MIA II</option>
+    <option value="X MIA III">Kelas X MIA III</option>
+    <option value="X IPS I">Kelas X IPS I</option>
+    <option value="X IPS II">Kelas X IPS II</option>
+    <option value="X IPS III">Kelas X IPS III</option>
+    <option value="XI MIA I">Kelas XI MIA I</option>
+    <option value="XI MIA II">Kelas XI MIA II</option>
+    <option value="XI MIA III">Kelas XI MIA III</option>
+    <option value="XI IPS I">Kelas XI IPS I</option>
+    <option value="XI IPS II">Kelas XI IPS II</option>
+    <option value="XI IPS III">Kelas XI IPS III</option>
+    <option value="XII MIA I">Kelas XII MIA I</option>
+    <option value="XII MIA II">Kelas XII MIA II</option>
+    <option value="XII MIA III">Kelas XII MIA III</option>
+    <option value="XII IPS I">Kelas XII IPS I</option>
+    <option value="XII IPS II">Kelas XII IPS II</option>
+    <option value="XII IPS III">Kelas XII IPS III</option>
+  </select><br>
+
+  <button onclick="startQuiz()">Mulai Kuis</button>
+</div>
+
+<div class="container hidden" id="quiz">
+  <h2 id="question">Pertanyaan disini</h2>
+  <div class="timer-fixed" id="timer">20 detik</div>
+  <div id="options"></div>
+  <p id="scoreDisplay" class="hidden"></p>
+  <p id="finalMessage" class="hidden"></p>
+
+  <div id="restartContainer" class="hidden">
+    <button id="restartButton" onclick="restartQuiz()">Mulai Ulang Quiz</button>
+  </div>
+</div>
+
+<audio id="quizMusic" loop controls>
+  <source src="audioquis.mpeg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  const nameInput = document.getElementById('nameInput');
+
+  nameInput.addEventListener('input', function() {
+    this.value = this.value.replace(/[^a-zA-Z\s]/g, '');
+  });
+</script>
+
+
+<script src="script.js"></script>
+</body>
+</html>
